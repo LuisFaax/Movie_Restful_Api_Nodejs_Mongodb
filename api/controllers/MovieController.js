@@ -7,8 +7,12 @@ const mongoose = require('mongoose'),
 exports.all_movies = function(req, res){
     Movie.find({}, function(err, movie){
        if(err) return res.json({message: err})
-
+       
+    if(movie.length > 0){
         res.json({data: movie})
+       }else{
+           res.json({message: 'No existen películas'})
+       }
     })
 }
 
