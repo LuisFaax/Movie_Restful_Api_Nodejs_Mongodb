@@ -1,0 +1,25 @@
+{
+  "name": "api_nodejs_mongodb",
+  "version": "1.0.0",
+  "description": "RESTful API NodeJS y Mongodb",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "restful",
+    "api",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "luisfaax@gmail",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
