@@ -1,7 +1,8 @@
 'use strict'
 
 const mongoose = require('mongoose'),
-      Movie = mongoose.model('Movies')
+      Movie = mongoose.model('Movies'),
+      ObjectID = require('mongodb').ObjectID
 
 //all movies
 exports.all_movies = function(req, res){
@@ -28,6 +29,7 @@ exports.create_movie = function(req, res){
 
 //find movie
 exports.read_movie = function(req, res){
+    if(!ObjectID.isValid(req.params.id)) return res.json({message: 'El ID proporsionado es inválido'})
     Movie.findById(req.params.id, function(err, movie){
         if(err) return res.json({message: err})
      
